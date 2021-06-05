@@ -7,26 +7,41 @@ import EasyRecruitLogo from '../../../static/EasyRecruitLogo.svg';
 
 const PageLayout = (props) => {
     const { pathname } = props.location;
+    const [isNavOpen, setIsNavOpen] = useState(true);
+    const pageId = 'main-content-page-layout-default-nav';
+
     const PageNav = (
         <Nav aria-label="Nav" theme="dark" ouiaId="navigation-list">
             <NavList>
+                <NavItem>
+                    <Link
+                        to="/jobs"
+                    >
+                        Profile
+                    </Link>
+                </NavItem>
+                <NavItem>
+                    <Link
+                        to="/jobs"
+                    >
+                        Jobs
+                    </Link>
+                </NavItem>
                 <NavItem isActive={pathname === '/jobs'}>
                     <Link
                         to="/jobs"
                     >
                         Publish Jobs
-              </Link>
-                </NavItem>
+                    </Link>
+                </NavItem>      
             </NavList>
         </Nav>
     );
 
-
-    const [isNavOpen, setIsNavOpen] = useState(true);
     const onNavToggle = () => {
         setIsNavOpen(!isNavOpen);
     };
-    const pageId = 'main-content-page-layout-default-nav';
+    
     console.log('EasyRecruitLogo', EasyRecruitLogo)
 
     const Header = (
@@ -57,7 +72,6 @@ const PageLayout = (props) => {
             header={Header}
             mainContainerId={pageId}
             sidebar={Sidebar}
-        // className="kogito-common--PageLayout"
         >
             <Switch>
                 <Route exact path="/" render={() => <Redirect to="/jobs" />} />

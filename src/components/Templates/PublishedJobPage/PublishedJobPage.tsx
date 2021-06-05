@@ -1,16 +1,12 @@
 import React from "react";
-import { Component } from "react";
 import { PublishedJobTable } from "../../Organisms";
 import { Title, TitleSizes, Button, PageSection, 
     // Toolbar, ToolbarGroup, ToolbarContent, ToolbarItem 
 } from '@patternfly/react-core';
 
-class PublishedJobPage extends Component {
-
-    render(){
+const PublishedJobPage = () => {
         return (
             <div id='publishedJobView'>
-                <br/>
                 <PageSection variant="light">
                     <Title headingLevel="h1" size={TitleSizes['4xl']}>
                         Publish Jobs
@@ -36,7 +32,6 @@ class PublishedJobPage extends Component {
                 </PageSection>
             </div>
         );
-    }
 }
 
-export default PublishedJobPage
+export default PublishedJobPage;
